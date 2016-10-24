@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Server Project</title>
+	<!-- Bootstrap CDN CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body ng-controller="MainController">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand brand-title" href="#top">Exploring Space</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				<ul class="nav navbar-nav navbar-right lists">
+					<li><a href="#top">Home</a></li>
+					<li><a href="#photo">Photo of the Day</a></li>
+					<li><a href="#history">History of NASA</a></li>
+
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>s
+	<div class="container-fluid">
+		<!-- Hero Image / Header -->
+		<div class="hero">
+			<div class="container-main">
+				<a id="top" class="anchor" style="text-decoration:none;">
+					<h1 class="hero-h1">NASA</h1>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="body-container">
+			<div class="row">
+				<h2 class="title-h2">
+					What Does NASA Do?
+				</h2>
+				<p class="p-full">
+					NASA's vision: We reach for new heights and reveal the unknown for the benefit of humankind. To do that, thousands of people have been working around the world -- and off of it -- for more than 50 years, trying to answer some basic questions. What's out there in space? How do we get there? What will we find? What can we learn there, or learn just by trying to get there, that will make life better here on Earth?
+				</p>
+				<br>
+			</div>
+		</div>
+
+		<!--Baddie Calculator Values and Images-->
+		<div class="alt-body-container">
+			<div class="row">
+				<div class="col-xs-12 full">
+					<h2 class="sub-title-h2">
+					Get the Photo of the Day
+						</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 full">
+					<p class="p-full-center">
+
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 spacer-container-grey"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<form name="myDate">
+						<input class="input" type="date" name="space" min="1999-01-01" max="2016-10-23"> &nbsp; &nbsp;
+						<button class="btn btn-md" ng-click="getNasa()">Photo of the Day</button>
+					</form>
+					<br>
+					<br>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+
+
+					<h2 class="sub-title-h2">{{title.title}}</h2>
+					<p class="p-full">{{explanation.explanation}}</p>
+
+
+
+
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<img src={{img.url}} width="500px">
+					<br>
+					<br>
+					<a id="history" class="anchor" style="text-decoration:none;"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="body-container">
+
+			<div class="row">
+				<h2 class="title-h2">
+					A Brief History of NASA
+					</h2>
+				<p class="p-full"><img src="https://images.unsplash.com/photo-1447433865958-f402f562b843?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=989373d41efffffeab742abcd98194f5" width="300px" align="right" style="padding-left: 10px; padding-bottom: 10px;">President Dwight D. Eisenhower established the National Aeronautics and Space Administration in 1958, partially in response to the Soviet Union's launch of the first artificial satellite the previous year. NASA grew out of the National Advisory Committee on Aeronautics (NACA), which had been researching flight technology for more than 40 years.</p>
+
+				<p class="p-full">President John F. Kennedy focused NASA and the nation on sending astronauts to the moon by the end of the 1960s. Through the Mercury and Gemini projects, NASA developed the technology and skills it needed for the journey. On July 20, 1969, Neil Armstrong and Buzz Aldrin became the first of 12 men to walk on the moon, meeting Kennedy's challenge.</p>
+
+				<p class="p-full">Meanwhile, NASA was continuing the aeronautics research pioneered by NACA. It also conducted purely scientific research and worked on developing applications for space technology, combining both pursuits in developing the first weather and communications satellites.</p>
+
+				<p class="p-full"><img src="https://images.unsplash.com/photo-1446941303752-a64bb1048d54?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=19dee3a8bbc4493288b075099620aa77" width="200px" align="left" style="padding-right: 15px; padding-bottom: 10px;">After Apollo, NASA focused on creating a reusable ship to provide regular access to space: the space shuttle. First launched in 1981, the space shuttle flew more than 130 successful missions before being retired in 2011. In 2000, the United States and Russia established permanent human presence in space aboard the International Space Station, a multinational project representing the work of 15 nations.</p>
+
+				<p class="p-full">NASA also has continued its scientific research. In 1997, Mars Pathfinder became the first in a fleet of spacecraft that have been exploring Mars, as we try to determine whether life ever existed there. The Terra, Aqua and Aura Earth Observing System satellites are flagships of a different fleet, this one in Earth orbit, designed to help us understand how our home world is changing. NASA's aeronautics teams are focused on improving aviation, so it meets the explosive growth in global demand for air services.</p>
+
+				<p class="p-full">Throughout its history, NASA has conducted or funded research that has led to numerous improvements to life here on Earth.</p>
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="footer-container">
+			<div class="row">
+				<br>
+				<p class="p-full">Made by Leah</p>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+
+		<!--	JS Files-->
+
+		<script src="app.js"></script>
+		<script src="service.js"></script>
+</body>
+
+</html>
